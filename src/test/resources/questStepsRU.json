@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "nextId": 2,
+      "answer": "answer1",
+      "question": "question1"
+    },
+    {
+      "id": 1,
+      "nextId": 3,
+      "answer": "answer2",
+      "question": "question1"
+    },
+    {
+      "id": 3,
+      "nextId": 4,
+      "answer": "answer3",
+      "question": "question2"
+    }
+  ]
+}
