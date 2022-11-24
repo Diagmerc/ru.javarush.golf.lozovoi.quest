@@ -15,6 +15,10 @@
         <maven.compiler.target>14</maven.compiler.target>
         <maven.compiler.source>14</maven.compiler.source>
         <junit.version>5.9.0</junit.version>
+        <gson.version>2.9.0</gson.version>
+        <jstl.version>1.2</jstl.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
     </properties>
 
     <dependencies>
@@ -39,12 +43,12 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.9.0</version>
+            <version>${gson.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <version>${jstl.version}</version>
         </dependency>
     </dependencies>
 
@@ -53,12 +57,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>${maven-war-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>14</source>
                     <target>14</target>
