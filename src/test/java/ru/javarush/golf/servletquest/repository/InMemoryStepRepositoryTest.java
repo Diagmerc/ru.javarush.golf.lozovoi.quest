@@ -1,7 +1,7 @@
-package golf.servletquest.repository;
+package ru.javarush.golf.servletquest.repository;
 
-import golf.servletquest.TestData;
-import golf.servletquest.entity.Step;
+import ru.javarush.golf.servletquest.TestData;
+import ru.javarush.golf.servletquest.entity.Step;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

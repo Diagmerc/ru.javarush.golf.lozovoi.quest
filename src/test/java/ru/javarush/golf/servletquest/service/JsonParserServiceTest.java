@@ -1,7 +1,7 @@
-package golf.servletquest.service;
+package ru.javarush.golf.servletquest.service;
 
-import golf.servletquest.TestData;
-import golf.servletquest.entity.Step;
+import ru.javarush.golf.servletquest.TestData;
+import ru.javarush.golf.servletquest.entity.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

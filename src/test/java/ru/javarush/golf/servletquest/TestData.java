@@ -1,6 +1,6 @@
-package golf.servletquest;
+package ru.javarush.golf.servletquest;
 
-import golf.servletquest.entity.Step;
+import ru.javarush.golf.servletquest.entity.Step;
 
 import java.util.Arrays;
 import java.util.List;

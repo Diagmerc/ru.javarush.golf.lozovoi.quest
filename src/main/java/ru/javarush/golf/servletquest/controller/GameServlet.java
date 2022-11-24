@@ -1,9 +1,9 @@
-package golf.servletquest.controller;
+package ru.javarush.golf.servletquest.controller;
 
-import golf.servletquest.entity.Step;
-import golf.servletquest.repository.InMemoryStepRepository;
-import golf.servletquest.repository.StepRepository;
-import golf.servletquest.service.JsonParserService;
+import ru.javarush.golf.servletquest.entity.Step;
+import ru.javarush.golf.servletquest.repository.InMemoryStepRepository;
+import ru.javarush.golf.servletquest.repository.StepRepository;
+import ru.javarush.golf.servletquest.service.JsonParserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

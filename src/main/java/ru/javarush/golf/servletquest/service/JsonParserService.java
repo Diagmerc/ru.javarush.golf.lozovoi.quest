@@ -1,9 +1,9 @@
-package golf.servletquest.service;
+package ru.javarush.golf.servletquest.service;
 
 import com.google.gson.Gson;
-import golf.servletquest.entity.Step;
-import golf.servletquest.repository.InMemoryStepRepository;
-import golf.servletquest.repository.StepRepository;
+import ru.javarush.golf.servletquest.entity.Step;
+import ru.javarush.golf.servletquest.repository.InMemoryStepRepository;
+import ru.javarush.golf.servletquest.repository.StepRepository;
 
 import java.io.FileReader;
 import java.util.List;
