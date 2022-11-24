@@ -21,7 +21,7 @@ class JsonParserServiceTest {
     @Test
     void parseStepsWithCurrentPath() {
         String currentPath = "questStepsRU.json";
-        List<Step> actual = new JsonParserService().parseSteps(currentPath).getList();
+        List<Step> actual = new JsonParserService().parseSteps(currentPath);
         List<Step> expected = new TestData().stepList;
         assertEquals(expected.get(1).toString(), actual.get(1).toString());
     }

@@ -1,21 +1,26 @@
 package golf.servletquest.service;
 
 import com.google.gson.Gson;
+import golf.servletquest.entity.Step;
+import golf.servletquest.repository.InMemoryStepRepository;
 import golf.servletquest.repository.StepRepository;
 
-import java.io.*;
+import java.io.FileReader;
+import java.util.List;
+import java.util.Objects;
 
 public class JsonParserService {
-    public StepRepository parseSteps(String quest) {
-        Gson gson = new Gson();
+    private final Gson gson = new Gson();
+
+    public List<Step> parseSteps(String quest) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         String file = classLoader.getResource(quest).getFile();
-        StepRepository stepRepository = null;
+        StepRepository repository = null;
         try (FileReader reader = new FileReader(file)) {
-            stepRepository = gson.fromJson(reader, StepRepository.class);
+            repository = gson.fromJson(reader, InMemoryStepRepository.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return stepRepository;
+        return Objects.requireNonNull(repository).getAllSteps();
     }
 }

@@ -1,6 +1,7 @@
 package golf.servletquest.controller;
 
 import golf.servletquest.entity.Step;
+import golf.servletquest.repository.InMemoryStepRepository;
 import golf.servletquest.repository.StepRepository;
 import golf.servletquest.service.JsonParserService;
 
@@ -18,7 +19,7 @@ public class GameServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        repository = new JsonParserService().parseSteps("questStepsRU.json");
+        repository = new InMemoryStepRepository(new JsonParserService().parseSteps("questStepsRU.json"));
         super.init();
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StepRepositoryTest {
+class InMemoryStepRepositoryTest {
     List<Step> stepList = new TestData().stepList;
     List<Step> actual = Arrays.asList(
             new Step(1, 2, "answer1", "question1"),
@@ -20,38 +20,38 @@ class StepRepositoryTest {
 
     @Test
     void getByNextId() {
-        List<Step> expected = new StepRepository(stepList).getByNextId(3);
+        List<Step> expected = new InMemoryStepRepository(stepList).getByNextId(3);
         assertEquals(expected.get(0).toString(), actual.get(2).toString());
         assertEquals(expected.get(1).toString(), actual.get(3).toString());
     }
 
     @Test
     void getByNextWithWrongId() {
-        List<Step> actual = new StepRepository(stepList).getByNextId(5);
+        List<Step> actual = new InMemoryStepRepository(stepList).getByNextId(5);
         assertEquals(null, actual);
     }
 
     @Test
     void getFirstAnswers() {
-        List<Step> expected = new StepRepository(stepList).getFirstAnswers();
+        List<Step> expected = new InMemoryStepRepository(stepList).getFirstAnswers();
         assertEquals(expected.get(0).toString(), actual.get(0).toString());
         assertEquals(expected.get(1).toString(), actual.get(1).toString());
     }
 
     @Test
     void getQuestionById() {
-        Step expected = new StepRepository(stepList).getQuestionById(3);
+        Step expected = new InMemoryStepRepository(stepList).getQuestionById(3);
         assertEquals(expected.toString(), actual.get(2).toString());
     }
 
     @Test
     void getQuestionWithWrongId() {
-        assertEquals(null, new StepRepository(stepList).getQuestionById(7));
+        assertEquals(null, new InMemoryStepRepository(stepList).getQuestionById(7));
     }
 
     @Test
     void getFirstQuestion() {
-        Step expected = new StepRepository(stepList).getFirstQuestion();
+        Step expected = new InMemoryStepRepository(stepList).getFirstQuestion();
         assertEquals(expected.toString(), actual.get(0).toString());
     }
 }
