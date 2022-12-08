@@ -6,6 +6,7 @@ import ru.javarush.golf.servletquest.repository.InMemoryStepRepository;
 import ru.javarush.golf.servletquest.repository.StepRepository;
 
 import java.io.FileReader;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 

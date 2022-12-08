@@ -1,6 +1,7 @@
 package ru.javarush.golf.servletquest.entity;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public class Step {
