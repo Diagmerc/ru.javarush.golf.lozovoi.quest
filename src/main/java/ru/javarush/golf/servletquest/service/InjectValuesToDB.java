@@ -1,7 +1,6 @@
-package ru.javarush.golf.servletquest.db_values_injector;
+package ru.javarush.golf.servletquest.service;
 
 import ru.javarush.golf.servletquest.entity.Step;
-import ru.javarush.golf.servletquest.service.JsonParserService;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,7 +23,7 @@ public class InjectValuesToDB {
 
         for (Step step : stepRepository) {
             preparedStatement.setInt(1,step.getId());
-            preparedStatement.setInt(2,step.getId());
+            preparedStatement.setInt(2,step.getNextId());
             preparedStatement.setString(3, step.getAnswer());
             preparedStatement.setString(4, step.getQuestion());
             preparedStatement.executeUpdate();

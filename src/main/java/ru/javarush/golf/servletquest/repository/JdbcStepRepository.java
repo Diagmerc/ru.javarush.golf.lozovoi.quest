@@ -11,10 +11,8 @@ public class JdbcStepRepository implements StepRepository {
     private PreparedStatement preparedStatement;
     private Statement statement;
 
-    public JdbcStepRepository() throws SQLException {
-        connection = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/postgres",
-                "testuser", "testuser");
+    public JdbcStepRepository(String url, String user, String password) throws SQLException {
+        connection = DriverManager.getConnection(url, user, password);
         statement = connection.createStatement();
     }
 
@@ -90,14 +88,5 @@ public class JdbcStepRepository implements StepRepository {
     @Override
     public Step getFirstQuestion() {
         return getQuestionById(1);
-    }
-
-    public static void main(String[] args) {
-        try {
-            Step questionById = new JdbcStepRepository().getQuestionById(3);
-            System.out.println(questionById);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

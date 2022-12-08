@@ -24,7 +24,8 @@ public class GameServlet extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
 //            repository = new InMemoryStepRepository(new JsonParserService().parseSteps("questStepsRU.json"));
-            repository = new JdbcStepRepository();
+            repository = new JdbcStepRepository("jdbc:postgresql://localhost:5432/postgres"
+            ,"testuser", "testuser");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
