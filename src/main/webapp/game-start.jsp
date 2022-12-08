@@ -15,17 +15,29 @@
                 <h4>${step.getQuestion()}</h4>
                 <br>
                 <h3>
+                    <script>
+                        function show_button() {
+                            var button = document.getElementById("button");
+                            button.disabled = false;
+                        }
+                    </script>
                     <form method="post" action="gameServlet">
                         <c:forEach items="${steps}" var="step">
-                            <input type="radio" class="btn-check" name="next" value="${step.getNextId()}"
+                            <input type="radio" onclick="show_button();" class="btn-check" name="next"
+                                   value="${step.getNextId()}"
                                    id="${step.getNextId()}">
                             <label class="btn btn-secondary" for="${step.getNextId()}">${step.getAnswer()}</label>
                         </c:forEach>
                         <p>
                             <br>
-                            <button type="submit" class="btn btn-outline-dark" name="win"
-                                    value="${step.getQuestion()}">${steps == null ? "Again" : "Next"}</button>
-                            <br>
+                            <button type="submit" class="btn btn-outline-dark" id="button" name="win" disabled=true;"
+                                    value="${step.getQuestion()}">Вперед
+                            </button>
+                            <br><br>
+                            <button type="submit" class="btn btn-outline-dark" id="button2" name="win"
+                                    value="${step.getQuestion()}"
+                            >Сначала
+                            </button>
                         </p>
                     </form>
                 </h3>
