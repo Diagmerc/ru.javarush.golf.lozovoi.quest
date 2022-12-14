@@ -1,6 +1,7 @@
 package ru.javarush.golf.servletquest.controller;
 
 import ru.javarush.golf.servletquest.entity.Step;
+import ru.javarush.golf.servletquest.repository.HQLStepRepository;
 import ru.javarush.golf.servletquest.repository.InMemoryStepRepository;
 import ru.javarush.golf.servletquest.repository.JdbcStepRepository;
 import ru.javarush.golf.servletquest.repository.StepRepository;
@@ -21,16 +22,17 @@ public class GameServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        try {
-            Class.forName("org.postgresql.Driver");
-//            repository = new InMemoryStepRepository(new JsonParserService().parseSteps("questStepsRU.json"));
-            repository = new JdbcStepRepository("jdbc:postgresql://localhost:5432/postgres"
-            ,"testuser", "testuser");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        //            repository = new InMemoryStepRepository(new JsonParserService().parseSteps("questStepsRU.json"));
+//        try {
+//            Class.forName("org.postgresql.Driver");
+//            repository = new JdbcStepRepository("jdbc:postgresql://localhost:5432/postgres"
+//            ,"testuser", "testuser");
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        } catch (ClassNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+        repository = new HQLStepRepository();
         super.init();
     }
 
