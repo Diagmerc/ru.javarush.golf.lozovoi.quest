@@ -23,16 +23,16 @@ public class GameServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         //            repository = new InMemoryStepRepository(new JsonParserService().parseSteps("questStepsRU.json"));
-//        try {
-//            Class.forName("org.postgresql.Driver");
-//            repository = new JdbcStepRepository("jdbc:postgresql://localhost:5432/postgres"
-//            ,"testuser", "testuser");
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        } catch (ClassNotFoundException e) {
-//            throw new RuntimeException(e);
-//        }
-        repository = new HQLStepRepository();
+        try {
+            Class.forName("org.postgresql.Driver");
+            repository = new JdbcStepRepository("jdbc:postgresql://localhost:5432/postgres"
+            ,"testuser", "testuser");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+//        repository = new HQLStepRepository();
         super.init();
     }
 
